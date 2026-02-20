@@ -32,12 +32,12 @@ Additionally, my code keeps the probabilistic logic more explicit and traceable,
 
 ## Q4. Changes I Would Make
 
-Based on the LLM suggestions, I would improve the modularity of my FamilyTree driver logic by separating major steps—such as spouse creation, child generation, and stopping conditions—into clearer helper methods. This would improve readability and maintainability.
+Based on the LLM suggestions, I would improve the modularity of my FamilyTree driver logic by separating major steps such as spouse creation, child generation, and stopping conditions into clearer helper methods. This would improve readability and maintainability.
 I would also make the simulation more testable by injecting a fixed random seed (or passing a random.Random instance into the factory). This ensures reproducible results, which is helpful for debugging and for writing reliable unit tests.
 
 ## Q5. Changes I Would Refuse
 
 I would refuse changes that reduce transparency or correctness of the assignment’s required logic, even if they make the code shorter.
 For example, I would not switch to Pandas solely to load CSV files, since it introduces an unnecessary dependency and can obscure the underlying logic. The built-in csv module is sufficient and clearer for this project.
-I would also refuse any change that violates the specification—such as replacing the required ceiling (round up) rule for child counts with round() or truncation, or changing the “evenly distributed” child birth-year requirement into a different interpretation.
+I would also refuse any change that violates the specification such as replacing the required ceiling (round up) rule for child counts with round() or truncation, or changing the “evenly distributed” child birth year requirement into a different interpretation.
 More generally, I would avoid abstraction that makes it harder to verify when marriage and birth probabilities are applied or whether the simulation output matches the assignment requirements.
